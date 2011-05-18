@@ -71,6 +71,9 @@ sections:
   won't work.
 ### local_repo_path: string
   The full repo to where roundabout will clone the pull request repos.
+### default_branch: string
+  The default branch to pull from / push to. Most likely this will be master
+  but it can vary
 ## github
 ### username: string
   The github username with write permission to the repository.
@@ -90,9 +93,6 @@ sections:
   github's API rate limits incoming requests, so there's no point in increasing
   this over 1. If it becomes possible to get a higher throughput on requests
   per second, here's where you'd configure it.
-### default_branch: string
-  The default branch to pull from / push to. Most likely this will be master
-  but it can vary
 ## pylint
   This is an optional configuration option.
 ### modules: array of strings

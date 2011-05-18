@@ -71,6 +71,9 @@ sections:
   won't work.
 ### local_repo_path: string
   The full repo to where roundabout will clone the pull request repos.
+### default_branch: string
+  The default branch to pull from / push to. Most likely this will be master
+  but it can vary
 ## github
 ### username: string
   The github username with write permission to the repository.

@@ -13,7 +13,8 @@
     "git": {
         "squash_merges": true,
         "base_repo_url": "BASE REPO URL", 
-        "local_repo_path": "/tmp/repos/roundabout"
+        "local_repo_path": "/tmp/repos/roundabout",
+        "default_branch": "master"
     }, 
     "github": {
         "username": "YOUR GITHUB USERNAME", 

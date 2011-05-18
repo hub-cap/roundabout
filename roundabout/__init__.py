@@ -83,8 +83,8 @@ def run(config):
             with repo as git:
                 log.info("Cloning to %s" % repo.clonepath)
 
-                # Ensure we're on master
-                git.branch("master").checkout()
+                # Ensure we're on the default branch
+                git.branch(config["git"]["default_branch"]).checkout()
                 try:
                     git.merge(git.remote_branch,
                               squash=config["git"].get("squash_merges"))
@@ -102,7 +102,7 @@ def run(config):
                         continue
 
                 # push up a test branch
-                git.push("master", remote_branch=git.local_branch_name)
+                git.push(config["git"]["default_branch"], remote_branch=git.local_branch_name)
 
                 with ci.job.Job.spawn(git.local_branch_name, config) as job:
                     while not job.complete:
@@ -110,7 +110,7 @@ def run(config):
 
                     if job:
                         # Successful build, good coverage, and clean pylint.
-                        git.push("master")
+                        git.push(config["git"]["default_branch"])
                         pull_request.close(git_client.BUILD_SUCCESS_MSG)
                     else:
                         pull_request.close(git_client.BUILD_FAIL_MSG % job.url)

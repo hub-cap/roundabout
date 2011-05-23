@@ -22,7 +22,6 @@ class Client(object):
             requests_per_second=config["github"]["req_per_second"],
             proxy_host=config["github"].get("http_proxy_host"),
             proxy_port=config["github"].get("http_proxy_port")
-
         )
         self.organization = self.config["github"]["organization"]
 

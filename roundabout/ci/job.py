@@ -40,7 +40,7 @@ class Job(object):
         the data for the job.
         """
         sleeptime = int(self.config["ci"].get("job_reload_sleep", 30))
-        log.info("Job not complete, sleeping for % seconds..." % sleeptime)
+        log.info("Job not complete, sleeping for %s seconds..." % sleeptime)
         time.sleep(sleeptime)
 
     @property

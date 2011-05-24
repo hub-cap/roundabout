@@ -2,7 +2,7 @@
     "default": {
         "logfile": "roundabout.log", 
         "lgtm": "lgtm",
-        "poll_sleep": 3600
+        "poll_sleep": 60
     }, 
     "ci": {
         "class": "YOUR CI INSTANCE (currently: hudson or jenkins)",
@@ -10,7 +10,7 @@
         "job": "JOB", 
         "password": "HUDSON PASSWORD", 
         "base_url": "YOUR HUDSON INSTANCE",
-        "job_reload_sleep": 3600
+        "job_reload_sleep": 300
     }, 
     "git": {
         "squash_merges": true,

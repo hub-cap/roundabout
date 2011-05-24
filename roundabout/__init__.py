@@ -65,7 +65,7 @@ def run(config):
 
         if not pull_requests:
             log.info("No work to do, sleeping.")
-            sleeptime = int(self.config["default"].get("poll_sleep", 30))
+            sleeptime = int(config["default"].get("poll_sleep", 30))
             time.sleep(sleeptime)
             continue
 
